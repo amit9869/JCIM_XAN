@@ -1,0 +1,17 @@
+######################################
+Classical MD directory
+######################################
+equil1.coor; reference coordinates for the wild-type NMT1-XAN complex
+
+equil.vel; velocity from the previoulsy equilibrated step
+
+par_all36_na_ion_wat.prm; nucleic-acid, ions, ligand, and water parameters
+
+
+setup.namd; NAMD ADJUSTABLE PARAMETERS
+
+** use setup.namd file to run the classical MD simulation of the NMT1-XAN complex
+
+
+
+

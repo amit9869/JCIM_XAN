@@ -1,0 +1,152 @@
+For the Classical Molecular Dynamics (MD) and thermodynamic integration calculation, separate directories are utilized. The directories beginning with "TI" specifically correspond to the thermodynamic integration calculation for a particular mutation.
+
+Use NAMD3 with a A100/V100 GPU to run these calculations.
+
+######################################
+Classical MD directory
+######################################
+This directory has following files:
+
+
+equil1.coor; reference coordinates for the wild-type NMT1-XAN complex
+
+equil.vel; velocity from the previously equilibrated step
+
+ionized1.psf; partial charge of each atom in the system  
+
+par_all36_na_ion_wat.prm; nucleic-acid, ions, ligand, and water parameters
+
+
+setup.namd; NAMD ADJUSTABLE PARAMETERS
+
+** use setup.namd file to run the classical MD simulation of the NMT1-XAN complex with NAMD3
+
+
+
+######################################
+TI_A6G directory
+######################################
+equil1_fornamd.coor; reference coordinates for the wild-type NMT1-XAN/A6G complex
+
+
+equil1_fornamd.psf; partial charge of each atom in the system
+
+equil1_fornamd.vel; velocity from the previoulsy equilibrated step
+
+par_all36_na_ion_wat.prm; nucleic-acid, ions, ligand, water parameters, parameters for hybrid molecule A6G
+
+
+setup.namd; NAMD ADJUSTABLE PARAMETERS
+
+** use setup.namd file to run the thermodynamic integration simulation of A6G transformation in the NMT1-XAN complex
+
+** use par_all36_na_ion_wat.prm for generating the parameters for each lambda to run the thermodynamic integration calculations since this file has parameters for hybrid molecule A6G
+
+
+######################################
+TI_A39G directory
+######################################
+equil1_fornamd.coor; reference coordinates for the wild-type NMT1-XAN/A39G complex
+
+
+equil1_fornamd.psf; partial charge of each atom in the system
+
+equil1_fornamd.vel; velocity from the previoulsy equilibrated step
+
+par_all36_na_ion_wat.prm; nucleic-acid, ions, ligand, water parameters, parameters for hybrid molecule A39G
+
+
+setup.namd; NAMD ADJUSTABLE PARAMETERS
+
+** use setup.namd file to run the thermodynamic integration simulation of A6G transformation in the NMT1-XAN complex
+
+** use par_all36_na_ion_wat.prm for generating the parameters for each lambda to run the thermodynamic integration calculations since this file has parameters for hybrid molecule A39G
+
+######################################
+TI_G10A directory
+######################################
+equil1_fornamd.coor; reference coordinates for the wild-type NMT1-XAN/G10A complex
+
+
+equil1_fornamd.psf; partial charge of each atom in the system
+
+equil1_fornamd.vel; velocity from the previoulsy equilibrated step
+
+par_all36_na_ion_wat.prm; nucleic-acid, ions, ligand, water parameters, parameters for hybrid molecule G10A
+
+
+setup.namd; NAMD ADJUSTABLE PARAMETERS
+
+** use setup.namd file to run the thermodynamic integration simulation of G10A transformation in the NMT1-XAN complex
+
+** use par_all36_na_ion_wat.prm for generating the parameters for each lambda to run the thermodynamic integration calculations since this file has parameters for hybrid molecule G10A
+
+
+######################################
+TI_G35A directory
+######################################
+equil1_fornamd.coor; reference coordinates for the wild-type NMT1-XAN/G35A complex
+
+
+equil1_fornamd.psf; partial charge of each atom in the system
+
+equil1_fornamd.vel; velocity from the previoulsy equilibrated step
+
+par_all36_na_ion_wat.prm; nucleic-acid, ions, ligand, water parameters, parameters for hybrid molecule G35A
+
+
+setup.namd; NAMD ADJUSTABLE PARAMETERS
+
+** use setup.namd file to run the thermodynamic integration simulation of G35A transformation in the NMT1-XAN complex
+
+** use par_all36_na_ion_wat.prm for generating the parameters for each lambda to run the thermodynamic integration calculations since this file has parameters for hybrid molecule G35A
+
+
+######################################
+TI_U40C directory
+######################################
+equil1_fornamd.coor; reference coordinates for the wild-type NMT1-XAN/U40C complex
+
+
+equil1_fornamd.psf; partial charge of each atom in the system
+
+equil1_fornamd.vel; velocity from the previoulsy equilibrated step
+
+par_all36_na_ion_wat.prm; nucleic-acid, ions, ligand, water parameters, parameters for hybrid molecule U40C
+
+
+setup.namd; NAMD ADJUSTABLE PARAMETERS
+
+** use setup.namd file to run the thermodynamic integration simulation of U40C transformation in the NMT1-XAN complex
+
+** use par_all36_na_ion_wat.prm for generating the parameters for each lambda to run the thermodynamic integration calculations since this file has parameters for hybrid molecule U40C
+
+######################################
+TI_U41C directory
+######################################
+equil1_fornamd.coor; reference coordinates for the wild-type NMT1-XAN/U41C complex
+
+
+equil1_fornamd.psf; partial charge of each atom in the system
+
+equil1_fornamd.vel; velocity from the previoulsy equilibrated step
+
+par_all36_na_ion_wat.prm; nucleic-acid, ions, ligand, water parameters, parameters for hybrid molecule U41C
+
+
+setup.namd; NAMD ADJUSTABLE PARAMETERS
+** use setup.namd file to run the thermodynamic integration simulation of U41C transformation in the NMT1-XAN complex
+
+** use par_all36_na_ion_wat.prm for generating the parameters for each lambda to run the thermodynamic integration calculations since this file has parameters for hybrid molecule U41C
+
+
+
+
+
+
+
+
+
+
+
+

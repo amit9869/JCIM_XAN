@@ -1,0 +1,19 @@
+######################################
+TI_G10A directory
+######################################
+equil1_fornamd.coor; reference coordinates for the wild-type NMT1-XAN/G10A complex
+
+
+equil1_fornamd.psf; partial charge of each atom in the system
+
+equil1_fornamd.vel; velocity from the previoulsy equilibrated step
+
+par_all36_na_ion_wat.prm; nucleic-acid, ions, ligand, water parameters, parameters for hybrid molecule G10A
+
+
+setup.namd; NAMD ADJUSTABLE PARAMETERS
+
+** use setup.namd file to run the thermodynamic integration simulation of G10A transformation in the NMT1-XAN complex
+
+** use par_all36_na_ion_wat.prm for generating the parameters for each lambda to run the thermodynamic integration calculations since this file has parameters for hybrid molecule G10A
+

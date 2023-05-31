@@ -1,0 +1,111 @@
+#############################################################
+## JOB DESCRIPTION                                         ##
+#############################################################
+
+# continue the equil run
+#
+#############################################################
+
+############################################
+## ADJUSTABLE PARAMETERS
+############################################## 
+CUDASOAintegrate on
+
+structure          equil1_fornamd.psf
+coordinates        equil1_fornamd.coor
+velocities         equil1_fornamd.vel
+
+
+set temperature    300 
+
+set inputname      equil1_fornamd
+set outputname	   dyna
+
+
+firsttimestep      0
+
+##############################################
+## SIMULATION PARAMETERS
+##############################################
+
+
+# Force-Field Parameters
+
+paraTypeCharmm	    on
+
+parameters       par_all36_na_ion_wat.prm 
+
+exclude             scaled1-4
+1-4scaling          1.0
+switching           on
+
+# You have some freedom choosing the cutoff
+
+cutoff              12. ;# may use smaller, maybe 10., with PME
+switchdist          10. ;# cutoff - 2.
+
+# Promise that atom won't move more than 2A in a cycle
+
+pairlistdist        14.  ;# cutoff + 2.
+stepspercycle       100   ;# redo pairlists every ten steps
+
+# Integrator Parameters
+
+timestep            2    ;# 0.5fs/step
+nonbondedFreq       1    ;# nonbonded forces every step
+fullElectFrequency  2    ;# PME only every other step
+
+#Harmonic restraint parameters
+rigidBonds      all 
+rigidTolerance  1.0e-8
+
+
+
+# periodic cell
+cellBasisVector1 60.0 0 0
+cellBasisVector2 0 80.0 0
+cellBasisVector3 0 0 60.0
+cellOrigin   -0.034508612006902695 0.015082869678735733 0.005904094316065311
+wrapAll            on
+
+
+
+#Electrostatic Force Evaluation (PME)
+PME	       	     	on
+PMEGridSpacing      1.0
+
+
+
+# Constant Temperature Control	 
+langevin        	on   ;#do langevin dynamics
+langevinDamping        	5    ;#damping coefficient (gamma) of 5/ps
+langevinTemp    	$temperature
+langevinHydrogen	off  ;# don't couple langevin bath to hydrogens
+
+# pressure control
+useGroupPressure      yes           ;# needed for rigid bonds
+useFlexibleCell       no            ;# no for water box, yes for membrane
+useConstantArea       no            ;# no for water box, maybe for membrane
+langevinPiston        on
+langevinPistonTarget  1.01325       ;# pressure in bar -> 1 atm
+langevinPistonPeriod  200.          ;# oscillation period around 200 fs
+langevinPistonDecay   100.          ;# oscillation decay time of 100 fs
+langevinPistonTemp    $temperature  ;# coupled to heat bath
+
+#output files
+binaryoutput        no
+outputName          $outputname     ;# base name for output from this run
+restartfreq         10000             ;# 500 steps = every 1ps
+dcdfreq             10000
+xstFreq             10000
+outputEnergies      10000             ;# 100 steps = every 0.1 ps
+#outputTiming       1000             ;# shows time per step and time to completion
+
+
+##########################################
+## EXECUTION SCRIPT
+##########################################
+
+run 100000  ;# 
+
+
